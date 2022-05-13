@@ -1,2 +1,3 @@
 # Finalproject_423
-the final project of CSC423
+This is the final project of CSC423. 
+Using SQL to create the entire database schema. 
