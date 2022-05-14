@@ -2,10 +2,10 @@ import sqlite3
 import pandas as pd
 
 
-db_connect = sqlite3.connect('Department.db')
+db_connect = sqlite3.connect('RU.db')
 
 
-#1----一共有多少个学生? 5个
+#1-How many students are there in total? 5
 
 df = pd.read_sql('SELECT COUNT(*) from Student; ',con=db_connect)
 
@@ -13,7 +13,7 @@ print("1:")
 print(df)
 
 
-#2--- 没有参加任何event的学生? 不存在
+#2----Students who did not attend any events? None
 
 sql = """
 SELECT * from Student 
@@ -26,7 +26,7 @@ print("2:")
 print(df)
 
 
-#3 --- --- 有那些dept 发布超过2个event ?  Department of Chinese
+#3 --- ---There are those depts that publish more than 2 events ?  Department of Chinese
 
 
 sql = """
@@ -41,7 +41,7 @@ print("3:")
 print(df)
 
 
-#4 --- 每个dept都有几个学生?
+#4 --- How many students does each dept have?
 
 
 sql ="""
@@ -55,7 +55,7 @@ print("4:")
 print(df)
 
 
-#5 ----数学系有那些学生?   Ma ,Peter
+#5 --What kind of students are there in the math department? Ma ,Peter
 
 sql ="""
 SELECT d.dept_id,d.dept_name,s.student_id,student_fname,student_lname
